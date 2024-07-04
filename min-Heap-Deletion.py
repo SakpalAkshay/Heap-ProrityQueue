@@ -1,5 +1,6 @@
 # for deletion we will use 2 min heap function i.e decrease key and Heapify
 #Intution is Replace the value to be deleted with -inf and then move -inf to top, through decrease min now utilize extract min to remove this -inf and heapify down
+import math
 def heapify_down(pq, parent_index):
     # Initialize the indices for the parent and its children
     left_child_index = 2 * parent_index + 1
@@ -58,5 +59,5 @@ def decreaseKey(heap,i,x): # here I is the index and x is value to replace value
 def deleteKey(heap,i):
     if i > len(heap):
         return -1
-    decreaseKey(heap,i,-inf)
+    decreaseKey(heap,i,-math.inf)
     extractMin(heap)
