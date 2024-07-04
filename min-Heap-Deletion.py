@@ -54,5 +54,9 @@ def decreaseKey(heap,i,x): # here I is the index and x is value to replace value
     heap[i],heap[p] = heap[p],heap[i]
     i = p
   
-   
-  
+#Deletion Operation
+def deleteKey(heap,i):
+    if i > len(heap):
+        return -1
+    decreaseKey(heap,i,-inf)
+    extractMin(heap)
